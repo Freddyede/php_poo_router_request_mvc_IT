@@ -1,0 +1,8 @@
+version: "3.3"
+
+services:
+    php:
+        build: .docker
+        restart: always
+        volumes:
+          - .:/var/www/html
