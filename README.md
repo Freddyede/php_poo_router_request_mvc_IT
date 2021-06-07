@@ -14,7 +14,7 @@ Clone the project
 # if your using ssh
 git clone git@gitlab.com:edemots-courses/dfs22c/php-poo.git
 # with https
-git clone https://gitlab.com/edemots-courses/dfs19/poo-en-php.git
+git clone https://gitlab.com/edemots-courses/dfs22c/php-poo.git
 ```
 
 ## Usage
