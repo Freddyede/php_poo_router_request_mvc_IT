@@ -21,6 +21,14 @@ git clone https://gitlab.com/edemots-courses/dfs22c/php-poo.git
 
 To execute a file just run in your terminal :
 
+If you have Make
+
 ```shell
 make -s exec path/to/file.php
+```
+
+else with docker
+
+```shell
+docker-compose run --rm php php path/to/file.php
 ```
