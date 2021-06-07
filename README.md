@@ -14,13 +14,21 @@ Clone the project
 # if your using ssh
 git clone git@gitlab.com:edemots-courses/dfs22c/php-poo.git
 # with https
-git clone https://gitlab.com/edemots-courses/dfs19/poo-en-php.git
+git clone https://gitlab.com/edemots-courses/dfs22c/php-poo.git
 ```
 
 ## Usage
 
 To execute a file just run in your terminal :
 
+If you have Make
+
 ```shell
 make -s exec path/to/file.php
+```
+
+else with docker
+
+```shell
+docker-compose run --rm php php path/to/file.php
 ```
