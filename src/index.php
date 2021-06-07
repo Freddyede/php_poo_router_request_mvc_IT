@@ -1,3 +1,3 @@
 <?php
 
-echo "Hello World" . PHP_EOL;
+require 'autoload.php'; // Pas toucher svp
