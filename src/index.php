@@ -14,4 +14,8 @@ require 'autoload.php'; // Pas toucher svp
 // $giraf->manger();
 // $giraf->dormir();
 
-var_dump(DB::getInstance());
+// var_dump(DB::getInstance());
+
+// echo "<h1>Hello World</h1>";
+
+var_dump(DB::getInstance()->query('SELECT * FROM users')->fetchAll());

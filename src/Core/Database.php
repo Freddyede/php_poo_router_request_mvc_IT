@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use PDO;
+
 // Singleton
 class Database
 {
@@ -10,7 +12,12 @@ class Database
     public static function getInstance()
     {
         if (self::$instance === null) {
-            self::$instance = new Database();
+            // 'mysql:host=localhost;dbname=bddname', 'user', 'mot de passe'
+            try {
+                self::$instance = new PDO('pgsql:host=postgres;dbname=postgres', 'postgres', 'secret');
+            } catch (\Exception $err) {
+                var_dump($err);
+            }
         }
 
         return self::$instance;
