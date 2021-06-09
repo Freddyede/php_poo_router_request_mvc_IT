@@ -23,6 +23,8 @@ class View
     public function __destruct()
     {
         extract($this->data);
+        // $animals
+        // $toto
 
         include $this->template;
     }

@@ -10,8 +10,7 @@ class AnimalController
     public function index()
     {
         $animals = Animal::all();
-        $toto = "toto";
 
-        new View('animals/index', compact("animals", "toto"));
+        new View('animals/index', compact("animals"));
     }
 }
