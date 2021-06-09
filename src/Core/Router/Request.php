@@ -11,7 +11,7 @@ class Request
     public function __construct()
     {
         $this->method = $_SERVER['REQUEST_METHOD'];
-        $this->uri = $_SERVER['REQUEST_URI'];
+        $this->uri = rtrim($_SERVER['REQUEST_URI'], '/');
     }
 
     public function getMethod()

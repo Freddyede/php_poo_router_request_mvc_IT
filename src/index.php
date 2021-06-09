@@ -5,10 +5,10 @@ use Core\Router\Request;
 use Core\Router\Router;
 
 require 'autoload.php'; // Pas toucher svp
+require 'routes.php';
 
-echo "<pre>";
-var_dump(new Request());
-echo "</pre>";
+$router = new Router();
+$router->run();
 
 // $controller = new AnimalController();
 // $controller->index();
