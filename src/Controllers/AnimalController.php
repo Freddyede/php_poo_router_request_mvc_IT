@@ -14,10 +14,15 @@ class AnimalController
         new View('animals/index', compact("animals"));
     }
 
-    public function show($id)
+    public function show($request, $id)
     {
         $animal = Animal::getById($id);
 
         var_dump($animal);
+    }
+
+    public function create($request)
+    {
+        var_dump($request->getBody());
     }
 }

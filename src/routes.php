@@ -5,4 +5,4 @@ use Facades\Route;
 
 Route::get('/animals', [AnimalController::class, 'index']);
 Route::get('/animals/{id}', [AnimalController::class, 'show']);
-// Route::get('/users', [UserController::class, 'index']);
+Route::post('/animals/create', [AnimalController::class, 'create']);
