@@ -13,6 +13,6 @@ class Facade
          * self::
          * static::
          */
-        return static::$rootClass::$name($arguments);
+        return static::$rootClass::$name(...$arguments);
     }
 }

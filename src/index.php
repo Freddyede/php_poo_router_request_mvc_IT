@@ -1,5 +1,6 @@
 <?php
 
+use Controllers\AnimalController;
 use Facades\DB;
 
 require 'autoload.php'; // Pas toucher svp
@@ -18,4 +19,5 @@ require 'autoload.php'; // Pas toucher svp
 
 // echo "<h1>Hello World</h1>";
 
-var_dump(DB::getInstance()->query('SELECT * FROM users')->fetchAll());
+$controller = new AnimalController();
+$controller->index();

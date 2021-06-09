@@ -22,4 +22,13 @@ class Database
 
         return self::$instance;
     }
+
+    /**
+     * On délègue les appels statiques de méthodes qui n'éxistent pas dans Database
+     * à l'instance de PDO que l'on crée au dessus
+     */
+    public static function __callStatic($name, $arguments)
+    {
+        return self::getInstance()->$name(...$arguments);
+    }
 }
