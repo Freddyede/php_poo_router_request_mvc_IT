@@ -3,22 +3,20 @@
 namespace Controllers;
 
 use Core\View;
-use Models\Animal;
+use Models\Sock;
 
-class AnimalController
+class SocksController
 {
     public function index()
     {
-        $animals = Animal::all();
-
+        $animals = Sock::all();
         new View('animals/index', compact("animals"));
     }
 
-    public function show($request, $id)
+    public function show($id)
     {
-        $animal = Animal::getById($id);
-
-        var_dump($animal);
+        $animalsView = Sock::getById($id);
+        new View('animals/show', compact("animalsView"));
     }
 
     public function create($request)

@@ -5,7 +5,7 @@ namespace Models;
 use Facades\DB;
 use PDO;
 
-class Animal
+class Sock
 {
     const TABLE = "animals";
 

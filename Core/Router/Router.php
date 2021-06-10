@@ -55,7 +55,7 @@ class Router
         foreach ($routes as $route) {
             // /animals => #^/animals$#
             // /animals/{id} => #^/animals/(.*)$#
-            $regex = '#^' . preg_replace('#/{([^/]*)}#', '/(.?)', $route['uri']) . '$#';
+            $regex = '#^'. preg_replace('#/{([^/]*)}#', '/(.?)', $route['uri']) . '$#';
             $matches = [];
             if (preg_match_all($regex, $this->request->getUri(), $matches, PREG_SET_ORDER)) {
                 // Route declarée, correspond à l'uri actuelle de l'utilisateur
