@@ -19,7 +19,6 @@ class View
         $this->template = $template;
         $this->data = $data;
     }
-
     public function __destruct()
     {
         extract($this->data);
