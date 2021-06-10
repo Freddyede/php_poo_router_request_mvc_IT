@@ -1,6 +1,6 @@
 <?php
 
-use Controllers\SocksController;
+use Controllers\{SocksController};
 use Facades\Route;
 
 Route::get('/user/socks', [SocksController::class, 'index']);

@@ -53,9 +53,9 @@ class Router
     public function handleRoute($routes)
     {
         foreach ($routes as $route) {
-            // /socks => #^/socks$#
-            // /socks/{id} => #^/socks/(.*)$#
-            $regex = '#^'. preg_replace('#/{([^/]*)}#', '/(.?)', $route['uri']) . '$#';
+            // /animals => #^/animals$#
+            // /animals/{id} => #^/animals/(.*)$#
+            $regex = '#^' . preg_replace('#/{([^/]*)}#', '/(.?)', $route['uri']) . '$#';
             $matches = [];
             if (preg_match_all($regex, $this->request->getUri(), $matches, PREG_SET_ORDER)) {
                 // Route declarée, correspond à l'uri actuelle de l'utilisateur
