@@ -21,7 +21,7 @@
     </head>
     <body>
         <?php require_once __DIR__ . '/../components/navbar.php' ?>
-        <h1 class="text-center mt-5 mb-5">Nom <?php foreach ($animalsView as $animal) : echo $animal->name; endforeach;?>  :</h1>
+        <h1 class="text-center mt-5 mb-5"><?php foreach ($animalsView as $animal) : echo $animal->name; endforeach;?>  :</h1>
         <div class="container">
             <table class="table text-center">
                 <thead>
