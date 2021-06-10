@@ -7,7 +7,7 @@ use PDO;
 
 class Sock
 {
-    const TABLE = "socks";
+    const TABLE = "animals";
 
     public static function all()
     {

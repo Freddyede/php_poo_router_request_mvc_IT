@@ -3,7 +3,6 @@
 use Core\Router\Request;
 use Core\Router\Router;
 use Controllers\SocksController;
-
 require 'autoload.php'; // Pas toucher svp
 require 'routes.php';
 
