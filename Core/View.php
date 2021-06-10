@@ -23,7 +23,7 @@ class View
     public function __destruct()
     {
         extract($this->data);
-        // $animals
+        // $socks
         // $toto
 
         include $this->template;

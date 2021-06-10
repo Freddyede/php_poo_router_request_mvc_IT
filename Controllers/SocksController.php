@@ -10,13 +10,13 @@ class SocksController
     public function index()
     {
         $animals = Sock::all();
-        new View('animals/index', compact("animals"));
+        new View('socks/index', compact("animals"));
     }
 
     public function show($id)
     {
         $animalsView = Sock::getById($id);
-        new View('animals/show', compact("animalsView"));
+        new View('socks/show', compact("animalsView"));
     }
 
     public function create($request)

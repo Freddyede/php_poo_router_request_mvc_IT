@@ -53,8 +53,8 @@ class Router
     public function handleRoute($routes)
     {
         foreach ($routes as $route) {
-            // /animals => #^/animals$#
-            // /animals/{id} => #^/animals/(.*)$#
+            // /socks => #^/socks$#
+            // /socks/{id} => #^/socks/(.*)$#
             $regex = '#^'. preg_replace('#/{([^/]*)}#', '/(.?)', $route['uri']) . '$#';
             $matches = [];
             if (preg_match_all($regex, $this->request->getUri(), $matches, PREG_SET_ORDER)) {
