@@ -12,7 +12,6 @@ class SocksController
         $animals = Sock::all();
         new View('animals/index', compact("animals"));
     }
-    // test
 
     public function show($id)
     {
