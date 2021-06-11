@@ -3,8 +3,6 @@
 namespace Models;
 
 use Core\ormManager;
-use Facades\DB;
-use PDO;
 
 class Sock extends ormManager
 {
