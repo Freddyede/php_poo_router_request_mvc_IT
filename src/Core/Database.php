@@ -15,6 +15,7 @@ class Database
             // 'mysql:host=localhost;dbname=bddname', 'user', 'mot de passe'
             try {
                 self::$instance = new PDO('mysql:host=localhost;dbname=public', 'root', 'root');
+                self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             } catch (\Exception $err) {
                 var_dump($err);
             }

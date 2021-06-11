@@ -29,9 +29,11 @@ final class Sock extends ormFacade
     public static function find($table,$id){
         return self::getById($table,$id);
     }
-
-    public static function getByColor($table1, $table2)
+    /**
+     * @return mixed all matching colors
+     */
+    public static function getByColorsSocks()
     {
-        return self::getByColor($table1, $table2);
+        return self::getByColorSocks();
     }
 }
