@@ -4,13 +4,13 @@ namespace Controllers;
 
 use Core\AbstractController;
 use Core\View;
-use Models\Sock;
 
 class SocksController extends AbstractController
 {
+    const TABLE = 'animals';
     public function index()
     {
-        $animals = Sock::all();
+        $animals = $this->findAll(self::TABLE);
         $url = $this->url;
         $title = $this->title;
         new View('socks/index', compact("animals","url","title"));
@@ -19,7 +19,7 @@ class SocksController extends AbstractController
     {
         $url = $this->url;
         $title = $this->title;
-        $animalsView = Sock::getById($id);
+        $animalsView = $this->find(self::TABLE, $id);
         new View('socks/show', compact("animalsView","url","title"));
     }
 

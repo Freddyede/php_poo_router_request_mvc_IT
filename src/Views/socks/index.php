@@ -13,7 +13,7 @@
     </head>
     <body>
         <?php require_once __DIR__ . '/../components/navbar.php' ?>
-        <h1>Liste des animaux</h1>
+        <h1 class="text-center mt-5 mb-5">Liste des animaux</h1>
         <div class="container">
             <table class="table text-center">
                 <thead>

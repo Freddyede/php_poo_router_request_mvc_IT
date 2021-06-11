@@ -2,23 +2,17 @@
 
 namespace Models;
 
+use Core\ormManager;
 use Facades\DB;
 use PDO;
 
-class Sock
+class Sock extends ormManager
 {
-    const TABLE = "animals";
-
-    public static function all()
-    {
-        return DB::query('SELECT * FROM ' . self::TABLE)->fetchAll(PDO::FETCH_CLASS, self::class);
+    public static function findAll($table){
+        return self::all($table);
     }
 
-    public static function getById($id)
-    {
-        $sql = DB::prepare('SELECT * FROM ' . self::TABLE . ' WHERE id = :id');
-        $sql->execute([':id' => $id]);
-
-        return $sql->fetchAll(PDO::FETCH_CLASS, self::class);
+    public static function find($table,$id){
+        return self::getById($table,$id);
     }
 }
