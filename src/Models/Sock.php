@@ -20,7 +20,7 @@ final class Sock extends ormFacade
     public static function findAll($table){
         return self::all($table);
     }
-     /**
+    /**
      * @param $table
      * @param $id
      * @return mixed
@@ -28,5 +28,10 @@ final class Sock extends ormFacade
      */
     public static function find($table,$id){
         return self::getById($table,$id);
+    }
+
+    public static function getByColor($table1, $table2)
+    {
+        return self::getByColor($table1, $table2);
     }
 }
