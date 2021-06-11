@@ -2,7 +2,7 @@
 
 namespace Models;
 
-use Core\ormManager;
+use Facades\ormFacade;
 
 /**
  * Class Sock
@@ -10,7 +10,7 @@ use Core\ormManager;
  * add final
  * Appel a ormManager de façon a limiter les requêtes en BDD
  */
-final class Sock extends ormManager
+final class Sock extends ormFacade
 {
     /**
      * @param $table

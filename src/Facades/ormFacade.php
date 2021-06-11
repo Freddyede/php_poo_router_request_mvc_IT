@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Core;
+namespace Facades;
 
 
 use Facades\DB;
@@ -12,7 +12,7 @@ use PDO;
  * @package Core
  * SQL pour insérer en BDD
  */
-class ormManager
+class ormFacade
 {
 
     public static function all($table)
