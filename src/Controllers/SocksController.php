@@ -5,7 +5,7 @@ namespace Controllers;
 use Core\AbstractController;
 use Core\View;
 
-class SocksController extends AbstractController
+final class SocksController extends AbstractController
 {
     const TABLE = 'animals';
     public function index()

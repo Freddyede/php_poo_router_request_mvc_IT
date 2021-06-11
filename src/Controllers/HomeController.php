@@ -7,7 +7,7 @@ namespace Controllers;
 use Core\AbstractController;
 use Core\View;
 
-class HomeController extends AbstractController
+final class HomeController extends AbstractController
 {
     public function index() {
         $url = $this->url;
