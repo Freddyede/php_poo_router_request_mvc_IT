@@ -21,7 +21,7 @@ class ormFacade
 
     public static function getById($table, $id)
     {
-        $sql = DB::prepare('SELECT * FROM ' . $table. ' WHERE id = :id');
+        $sql = DB::prepare('SELECT * FROM ' . $table . ' WHERE id = :id');
         $sql->execute([':id' => $id]);
 
         return $sql->fetchAll(PDO::FETCH_CLASS, self::class);
@@ -31,7 +31,20 @@ class ormFacade
     {
         $sql = DB::prepare('SELECT * FROM :socks
         INNER JOIN :ties ON :socks.color = :ties.color');
-        $sql->execute([':socks'=> $table1, ':ties'=> $table2]);
+        $sql->execute([':socks' => $table1, ':ties' => $table2]);
+        return $sql->fetchAll(PDO::FETCH_CLASS, self::class);
+    }
+
+    public static function postSock($request)
+    {
+        // $sql = DB::prepare(INSERT INTO ' . $table . ' (`name`, `type`, `color`) VALUES(:name, :type, :color));
+
+        var_dump($request);
+
+        $sql = DB::prepare('INSERT INTO socks(name, type, color) VALUES(:name, :type, :color)');
+        // $sql->bindValue(':name', $name, PDO::PARAM_STR);
+        $sql->execute();
+
         return $sql->fetchAll(PDO::FETCH_CLASS, self::class);
     }
 }
