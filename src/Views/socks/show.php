@@ -28,7 +28,7 @@
                 <tr>
                     <th scope="col">Name</th>
                     <th scope="col">Type</th>
-                    <th scope="col">Created_at</th>
+                    <th scope="col">Color</th>
                     <th scope="col">Action</th>
                 </tr>
                 </thead>
@@ -36,8 +36,8 @@
                 <?php foreach ($animalsView as $animal) : ?>
                     <tr>
                         <td><?= $animal->name ?></td>
-                        <td><?= $animal->name ?></td>
-                        <td><?php $date = new DateTime($animal->created_at); echo $date->format('dS l m Y a H:i') ?></td>
+                        <td><?= $animal->type ?></td>
+                        <td><?= $animal->color ?></td>
                         <td>
                             <div class="row">
                                 <div class="col-6 text-center">

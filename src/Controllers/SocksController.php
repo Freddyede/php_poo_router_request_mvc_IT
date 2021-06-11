@@ -7,7 +7,7 @@ use Core\View;
 
 final class SocksController extends AbstractController
 {
-    const TABLE = 'animals';
+    const TABLE = 'socks';
     public function index()
     {
         $animals = $this->findAll(self::TABLE);
