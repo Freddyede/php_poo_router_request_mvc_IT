@@ -7,6 +7,11 @@ namespace Core;
 use Facades\DB;
 use PDO;
 
+/**
+ * Class ormManager
+ * @package Core
+ * SQL pour insérer en BDD
+ */
 class ormManager
 {
 
