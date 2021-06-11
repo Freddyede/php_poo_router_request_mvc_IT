@@ -7,6 +7,7 @@ use Core\ormManager;
 /**
  * Class Sock
  * @package Models
+ * add final
  * Appel a ormManager de façon a limiter les requêtes en BDD
  */
 final class Sock extends ormManager
