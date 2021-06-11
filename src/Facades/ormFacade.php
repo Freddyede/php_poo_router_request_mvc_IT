@@ -4,7 +4,6 @@
 namespace Facades;
 
 
-use Facades\DB;
 use PDO;
 
 /**
