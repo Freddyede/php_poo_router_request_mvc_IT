@@ -34,6 +34,6 @@ final class Sock extends ormFacade
      */
     public static function getByColorsSocks()
     {
-        return self::getByColorSocks();
+        return self::getSocksNameByColorSocks();
     }
 }

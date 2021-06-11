@@ -37,8 +37,16 @@ class ormFacade
     /**
      * @return mixed all matching colors
      */
-    public static function getByColorSocks() {
+    public static function getSocksByColorSocks() {
         $sql = DB::prepare('SELECT * FROM socks INNER JOIN ties ON socks.color = ties.color');
+        $sql->execute();
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+    }
+    /**
+     * @return mixed all matching colors
+     */
+    public static function getSocksNameByColorSocks() {
+        $sql = DB::prepare('SELECT socks.name FROM socks INNER JOIN ties ON socks.color = ties.color');
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
