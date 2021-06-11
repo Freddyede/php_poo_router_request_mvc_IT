@@ -60,9 +60,16 @@ class ormFacade
      * @return mixed
      */
     public static function update($table,$id,$arrayVal) {
-        $sql = DB::prepare("UPDATE :table SET name = :name, type = :type, color = :color WHERE :table.id=:id");
-        $sql->execute([':type',$arrayVal['type'],':name',$arrayVal['name'],':color',$arrayVal['color'],':table',$table,':id',$id]);
-        return $sql->fetch(PDO::PARAM_BOOL);
+        $sql = DB::prepare("UPDATE $table SET `name` = :name, type = :type, color = :color WHERE id=:id");
+        $sql->execute(
+            [
+                ':name'=>$arrayVal['name'],
+                ':type'=>$arrayVal['type'],
+                ':color'=>$arrayVal['color'],
+                ':id'=>$id
+            ]
+        );
+        return $sql->fetchAll();
     }
 
     /**
@@ -87,8 +94,8 @@ class ormFacade
      * @return mixed
      */
     public static function delete($table, $id) {
-        $sql = DB::prepare("DELETE FROM :table WHERE id = :id");
-        $sql->execute([':table'=>$table,':id'=>$id]);
-        return $sql->fetch(PDO::PARAM_BOOL);
+        $sql = DB::prepare("DELETE FROM $table WHERE id = :id");
+        $sql->execute([':id'=>$id]);
+        return $sql->fetchAll();
     }
 }

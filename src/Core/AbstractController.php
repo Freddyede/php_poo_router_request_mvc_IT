@@ -56,7 +56,7 @@ abstract class AbstractController {
      */
     public function updateController($table,$id, $arrayVal)
     {
-        return Sock::update($table,$id, $arrayVal);
+        return Sock::updateDatas($table,$id, $arrayVal);
     }
 
     /**
@@ -64,6 +64,6 @@ abstract class AbstractController {
      */
     public function deleteController($table,$id)
     {
-        return Sock::delete($table,$id);
+        return Sock::deleteDatas($table,$id);
     }
 }

@@ -56,11 +56,11 @@ final class Sock extends ormFacade
     /**
      * @return mixed
      */
-    public static function update($table,$id, $arrayVal)
+    public static function updateDatas($table,$id, $arrayVal)
     {
         return self::update($table,$id, $arrayVal);
     }
-    public static function delete($table, $id) {
+    public static function deleteDatas($table, $id) {
         return self::delete($table,$id);
     }
 }
