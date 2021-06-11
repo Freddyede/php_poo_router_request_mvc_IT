@@ -34,6 +34,33 @@ final class Sock extends ormFacade
      */
     public static function getByColorsSocks()
     {
+        return self::getSocksByColorSocks();
+    }
+
+    /**
+     * @return mixed
+     */
+    public static function getByNameSocks()
+    {
         return self::getSocksNameByColorSocks();
+    }
+
+    /**
+     * @return mixed
+     */
+    public static function insertDatas($table,$arrayVal)
+    {
+        return self::insert($table,$arrayVal);
+    }
+
+    /**
+     * @return mixed
+     */
+    public static function update($table,$id, $arrayVal)
+    {
+        return self::update($table,$id, $arrayVal);
+    }
+    public static function delete($table, $id) {
+        return self::delete($table,$id);
     }
 }

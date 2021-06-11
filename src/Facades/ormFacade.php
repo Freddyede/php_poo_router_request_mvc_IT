@@ -34,20 +34,61 @@ class ormFacade
 
         return $sql->fetchAll(PDO::FETCH_CLASS, self::class);
     }
+
     /**
-     * @return mixed all matching colors
+     * @return mixed
      */
     public static function getSocksByColorSocks() {
         $sql = DB::prepare('SELECT * FROM socks INNER JOIN ties ON socks.color = ties.color');
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
+
     /**
-     * @return mixed all matching colors
+     * @return mixed
      */
     public static function getSocksNameByColorSocks() {
         $sql = DB::prepare('SELECT socks.name FROM socks INNER JOIN ties ON socks.color = ties.color');
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    /**
+     * @param $table
+     * @param $id
+     * @param $arrayVal
+     * @return mixed
+     */
+    public static function update($table,$id,$arrayVal) {
+        $sql = DB::prepare("UPDATE :table SET name = :name, type = :type, color = :color WHERE :table.id=:id");
+        $sql->execute([':type',$arrayVal['type'],':name',$arrayVal['name'],':color',$arrayVal['color'],':table',$table,':id',$id]);
+        return $sql->fetch(PDO::PARAM_BOOL);
+    }
+
+    /**
+     * @param $table
+     * @param $arrayVal
+     * @return mixed
+     */
+    public static function insert($table,$arrayVal) {
+        $sql = DB::prepare("INSERT INTO $table (name,type,color) VALUES (:name,:type,:color)");
+        $sql->execute(
+            [
+                ':name'=>$arrayVal['name'],
+                ':type'=>$arrayVal['type'],
+                ':color'=>$arrayVal['color']
+            ]);
+        return $sql->fetchAll();
+    }
+
+    /**
+     * @param $table
+     * @param $id
+     * @return mixed
+     */
+    public static function delete($table, $id) {
+        $sql = DB::prepare("DELETE FROM :table WHERE id = :id");
+        $sql->execute([':table'=>$table,':id'=>$id]);
+        return $sql->fetch(PDO::PARAM_BOOL);
     }
 }

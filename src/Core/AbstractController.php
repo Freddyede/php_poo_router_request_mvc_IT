@@ -35,4 +35,35 @@ abstract class AbstractController {
     public function getByColorsSocksController() {
         return Sock::getByColorsSocks();
     }
+    /**
+     * @return mixed
+     */
+    public function getByNameSocksController()
+    {
+        return Sock::getSocksNameByColorSocks();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function insertController($table,$arrayVal)
+    {
+        return Sock::insertDatas($table,$arrayVal);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function updateController($table,$id, $arrayVal)
+    {
+        return Sock::update($table,$id, $arrayVal);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function deleteController($table,$id)
+    {
+        return Sock::delete($table,$id);
+    }
 }
