@@ -17,7 +17,8 @@ final class Sock extends ormFacade
      * @return mixed
      * Method call by abstractController
      */
-    public static function findAll($table){
+    public static function findAll($table)
+    {
         return self::all($table);
     }
     /**
@@ -26,8 +27,9 @@ final class Sock extends ormFacade
      * @return mixed
      * Method call by abstractController
      */
-    public static function find($table,$id){
-        return self::getById($table,$id);
+    public static function find($table, $id)
+    {
+        return self::getById($table, $id);
     }
     /**
      * @return mixed all matching colors
@@ -48,19 +50,24 @@ final class Sock extends ormFacade
     /**
      * @return mixed
      */
-    public static function insertDatas($table,$arrayVal)
+    public static function insertDatas($table, $arrayVal)
     {
-        return self::insert($table,$arrayVal);
+        return self::insert($table, $arrayVal);
     }
 
     /**
      * @return mixed
      */
-    public static function updateDatas($table,$id, $arrayVal)
+    public static function updateDatas($table, $id, $arrayVal)
     {
-        return self::update($table,$id, $arrayVal);
+        return self::update($table, $id, $arrayVal);
     }
-    public static function deleteDatas($table, $id) {
-        return self::delete($table,$id);
+
+    /**
+     * @return mixed
+     */
+    public static function deleteDatas($table, $id)
+    {
+        return self::delete($table, $id);
     }
 }
