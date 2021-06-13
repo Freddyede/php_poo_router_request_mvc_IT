@@ -12,4 +12,3 @@ Route::get('/socks/update/{id}', [SocksController::class, 'update']);
 Route::post('/socks/update/{id}', [SocksController::class, 'persistUpdate']);
 //Route::get('/user/ties', [TiesController::class, 'index']);
 //Route::get('/user/ties/{id}', [TiesController::class, 'show']);
-//Route::post('/socks/create', [AnimalController::class, 'create']);

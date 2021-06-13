@@ -35,13 +35,13 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($animals as $animal) : ?>
+                <?php foreach ($socks as $sock) : ?>
                     <tr>
-                        <td><?= $animal->name ?></td>
+                        <td><?= $sock->name ?></td>
                         <td>
                             <div class="row">
                                 <div class="col-4 text-center">
-                                    <a href="socks/<?= $animal->id ?>">
+                                    <a href="socks/<?= $sock->id ?>">
                                         <i class="fas fa-book-open"></i>
                                     </a>
                                 </div>

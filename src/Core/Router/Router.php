@@ -53,8 +53,6 @@ class Router
     public function handleRoute($routes)
     {
         foreach ($routes as $route) {
-            // /animals => #^/animals$#
-            // /animals/{id} => #^/animals/(.*)$#
             $regex = '#^' . preg_replace('#/{([^/]*)}#', '/(.?)', $route['uri']) . '$#';
             $matches = [];
             if (preg_match_all($regex, $this->request->getUri(), $matches, PREG_SET_ORDER)) {
@@ -77,7 +75,7 @@ class Router
                 $controllerName = $route['controller'][0];
                 $action = $route['controller'][1];
 
-                // new Controller\AnimalController()
+                // new Controller\SocksController()
                 $controller = new $controllerName();
                 // $controller->show(...$params)
                 $controller->$action($this->request, ...$params);

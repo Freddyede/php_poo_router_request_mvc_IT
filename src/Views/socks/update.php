@@ -24,12 +24,12 @@
 
 <body>
     <?php require_once __DIR__ . '/../components/navbar.php' ?>
-    <h1 class="text-center mt-5 mb-5">Update <?php foreach ($animalsView as $animal) : echo $animal->name;
+    <h1 class="text-center mt-5 mb-5">Update <?php foreach ($socksView as $sock) : echo $sock->name;
                                                 endforeach; ?> sock :</h1>
     <div class="container">
         <table class="table text-center">
             <thead>
-                <?php foreach ($animalsView as $animal) : ?>
+                <?php foreach ($socksView as $sock) : ?>
 
                     <tr>
                         <th scope="col">Name</th>

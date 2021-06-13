@@ -10,26 +10,26 @@ final class SocksController extends AbstractController
     const TABLE = 'socks';
     public function index()
     {
-        $animals = $this->findAll(self::TABLE);
+        $socks = $this->findAll(self::TABLE);
         $url = $this->url;
         $title = $this->title;
-        new View('socks/index', compact("animals", "url", "title"));
+        new View('socks/index', compact("socks", "url", "title"));
     }
     public function show($request, $id)
     {
         $url = $this->url;
         $title = $this->title;
-        $animalsView = $this->find(self::TABLE, $id);
-        new View('socks/show', compact("animalsView", "url", "title"));
+        $socksView = $this->find(self::TABLE, $id);
+        new View('socks/show', compact("socksView", "url", "title"));
     }
 
     public function create($request)
     {
         $url = $this->url;
         $title = $this->title;
-        $animalsView = null;
+        $socksView = null;
 
-        new View('socks/create', compact("animalsView", "url", "title"));
+        new View('socks/create', compact("socksView", "url", "title"));
     }
 
     public function persistInsert()
@@ -45,9 +45,9 @@ final class SocksController extends AbstractController
 
         $url = $this->url;
         $title = $this->title;
-        $animalsView = $this->find(self::TABLE, $id);
+        $socksView = $this->find(self::TABLE, $id);
 
-        new View('socks/update', compact("animalsView", "url", "title"));
+        new View('socks/update', compact("socksView", "url", "title"));
     }
 
     public function persistUpdate($request, $id)
