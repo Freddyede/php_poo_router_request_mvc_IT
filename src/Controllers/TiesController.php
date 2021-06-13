@@ -5,27 +5,22 @@ namespace Controllers;
 use Core\AbstractController;
 use Core\View;
 
-final class SocksController extends AbstractController
+final class TiesController extends AbstractController
 {
-    const TABLE = 'socks';
+    const TABLE = 'ties';
     public function index()
     {
         $socks = $this->findAll(self::TABLE);
         $url = $this->url;
         $title = $this->title;
-        new View('socks/index', compact("socks", "url", "title"));
+        new View('ties/index', compact("socks", "url", "title"));
     }
-    public function showSocks($request, $id)
+    public function show($request, $id)
     {
         $url = $this->url;
         $title = $this->title;
-        $socksView = self::find(self::TABLE, $id);
-        var_dump($socksView);
-        try {
-            new View('socks/show', compact("socksView", "url", "title"));
-        }catch (\Exception $e){
-            throw new \Exception($e->getMessage());
-        }
+        $ties = $this->find(self::TABLE, $id);
+        new View('ties/show', compact("ties", "url", "title"));
     }
 
     public function create($request)
@@ -34,15 +29,15 @@ final class SocksController extends AbstractController
         $title = $this->title;
         $socksView = null;
 
-        new View('socks/create', compact("socksView", "url", "title"));
+        new View('ties/create', compact("socksView", "url", "title"));
     }
 
     public function persistInsert()
     {
         if (isset($_POST)) {
-            $this->insertController('socks', $_POST);
+            $this->insertController('ties', $_POST);
         }
-        header('Location: /socks');
+        header('Location: /ties');
     }
 
     public function update($request,  $id)
@@ -56,9 +51,7 @@ final class SocksController extends AbstractController
 
     public function persistUpdate($request, $id)
     {
-        $datas = $request->getBody();
-        if (isset($datas)) {
-            var_dump($request);
+        if (isset($_POST)) {
             self::updateController(self::TABLE,$id,$request->getBody());
         }
         header('Location: /socks');
@@ -69,7 +62,7 @@ final class SocksController extends AbstractController
         var_dump($id);
         // var_dump($_REQUEST);
         // die;
-        $this->deleteController('socks', $id);
-        header('Location: /socks');
+        $this->deleteController('ties', $id);
+        header('Location: /ties');
     }
 }
