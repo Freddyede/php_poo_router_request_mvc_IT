@@ -100,6 +100,8 @@ class ormFacade
      */
     public static function delete($table, $id)
     {
+        // var_dump($id);
+        // die;
         $sql = DB::prepare("DELETE FROM $table WHERE id = :id");
         $sql->execute([':id' => $id]);
         return $sql->fetchAll();

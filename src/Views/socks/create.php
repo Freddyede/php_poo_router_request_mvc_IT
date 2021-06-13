@@ -38,10 +38,10 @@
             <tbody>
                 <form action="create" method="post">
                     <tr>
-                        <td><input type="text" name="name" /></td>
+                        <td><input class="input" type="text" name="name" /></td>
                         <td><input type="text" name="type" /></td>
                         <td><input type="text" name="color" /></td>
-                        <td><input type="submit" value="Enregistrer" name="submit"></td>
+                        <td><input class="btn btn-primary" type="submit" value="Enregistrer" name="submit"></td>
                     </tr>
                 </form>
             </tbody>

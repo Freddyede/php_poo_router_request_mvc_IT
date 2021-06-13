@@ -52,7 +52,6 @@ final class SocksController extends AbstractController
 
     public function persistUpdate($id)
     {
-
         if (isset($_POST)) {
             $this->updateController('socks', $id, $_POST);
         }
@@ -61,7 +60,8 @@ final class SocksController extends AbstractController
 
     public function delete($id)
     {
-
+        // var_dump($_REQUEST);
+        // die;
         $this->deleteController('socks', $id);
         header('Location: /socks');
     }

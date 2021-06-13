@@ -45,14 +45,14 @@
                         <td>
                             <div class="row">
                                 <div class="col-6 text-center">
-                                    <a class="link-hypertexte" href="update/<?= $sock->id ?>">
+                                    <a class="btn btn-outline-primary" href="update/<?= $sock->id ?>">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </div>
                                 <div class="col-6 text-center">
-                                    <a class="link-hypertexte" href="delete/<?= $sock->id ?>">
-                                        <i class="fas fa-trash"></i>
-                                    </a>
+                                    <form action="delete/<?= $sock->id ?>" method="post">
+                                        <button class="btn btn-outline-danger" type="submit"><i class="fas fa-trash"></i></button>
+                                    </form>
                                 </div>
                             </div>
                         </td>

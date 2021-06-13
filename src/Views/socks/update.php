@@ -44,7 +44,7 @@
                         <td><input type="text" name="name" /></td>
                         <td><input type="text" name="type" /></td>
                         <td><input type="text" name="color" /></td>
-                        <td><input type="submit" value="Enregistrer"></td>
+                        <td><input class="btn btn-primary" type="submit" value="Enregistrer"></td>
                     </tr>
                 </form>
             <?php endforeach; ?>
