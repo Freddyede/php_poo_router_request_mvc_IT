@@ -58,8 +58,9 @@ final class SocksController extends AbstractController
         header('Location: /socks');
     }
 
-    public function delete($id)
+    public function delete($request, $id)
     {
+        var_dump($id);
         // var_dump($_REQUEST);
         // die;
         $this->deleteController('socks', $id);
