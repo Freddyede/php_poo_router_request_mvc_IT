@@ -40,7 +40,7 @@ final class SocksController extends AbstractController
     public function persistInsert()
     {
         if (isset($_POST)) {
-            $this->insertController('ties', $_POST);
+            $this->insertController('socks', $_POST);
         }
         header('Location: /socks');
     }
