@@ -50,12 +50,19 @@ final class SocksController extends AbstractController
         new View('socks/update', compact("socksView", "url", "title"));
     }
 
-    public function persistUpdate($request, $id)
+    public function persistUpdate($id)
     {
 
         if (isset($_POST)) {
             $this->updateController('socks', $id, $_POST);
         }
+        header('Location: /socks');
+    }
+
+    public function delete($id)
+    {
+
+        $this->deleteController('socks', $id);
         header('Location: /socks');
     }
 }
