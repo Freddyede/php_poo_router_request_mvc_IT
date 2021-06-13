@@ -29,24 +29,24 @@
     <div class="container">
         <table class="table text-center">
             <thead>
-                <?php foreach ($socksView as $sock) : ?>
+            <?php foreach ($socksView as $sock) : ?>
 
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Color</th>
-                        <th scope="col">Action</th>
-                    </tr>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Type</th>
+                <th scope="col">Color</th>
+                <th scope="col">Action</th>
+            </tr>
             </thead>
             <tbody>
-                <form action="" method="post">
-                    <tr>
-                        <td><input type="text" name="name" /></td>
-                        <td><input type="text" name="type" /></td>
-                        <td><input type="text" name="color" /></td>
-                        <td><input class="btn btn-primary" type="submit" value="Enregistrer"></td>
-                    </tr>
-                </form>
+            <form action="/ties/update/<?= $sock->id?>" method="POST">
+                <tr>
+                    <td><input type="text" value="<?= $sock->name?>" name="name" /></td>
+                    <td><input type="text" value="<?= $sock->type?>" name="type" /></td>
+                    <td><input type="text" value="<?= $sock->color?>" name="color" /></td>
+                    <td><input class="btn btn-primary" type="submit" value="Enregistrer"></td>
+                </tr>
+            </form>
             <?php endforeach; ?>
             </tbody>
         </table>

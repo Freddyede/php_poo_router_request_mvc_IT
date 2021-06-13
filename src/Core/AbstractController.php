@@ -9,7 +9,7 @@ abstract class AbstractController {
     /**
      * @var array|string[][] $url
      */
-    protected array $url = [['url'=>'/socks','name'=>'Socks'],['url'=>'/user/tie','name'=>'Ties']];
+    protected array $url = [['url'=>'/socks','name'=>'Socks'],['url'=>'/ties','name'=>'Ties']];
     /**
      * @var array|string[][] $title
      */

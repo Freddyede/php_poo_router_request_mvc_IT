@@ -23,8 +23,8 @@
 </head>
 
 <body>
-    <?php require_once __DIR__ . '/../components/navbar.php' ?>
-    <h1 class="text-center mt-5 mb-5"><?php foreach ($socksView as $sock) : echo $sock->name;
+    <?php require_once __DIR__ . '/../components/navbar.php'?>
+    <h1 class="text-center mt-5 mb-5"><?php foreach ($ties as $sock) : echo $sock->name;
                                         endforeach; ?> :</h1>
     <div class="container">
         <table class="table text-center">
@@ -37,20 +37,20 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($socksView as $sock) : ?>
+                <?php foreach ($ties as $tie) : ?>
                     <tr>
-                        <td><?= $sock->name ?></td>
-                        <td><?= $sock->type ?></td>
-                        <td><?= $sock->color ?></td>
+                        <td><?= $tie->name ?></td>
+                        <td><?= $tie->type ?></td>
+                        <td><?= $tie->color ?></td>
                         <td>
                             <div class="row">
                                 <div class="col-6 text-center">
-                                    <a class="btn btn-outline-primary" href="update/<?= $sock->id ?>">
+                                    <a class="btn btn-outline-primary" href="update/<?= $tie->id ?>">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </div>
                                 <div class="col-6 text-center">
-                                    <form action="delete/<?= $sock->id ?>" method="post">
+                                    <form action="delete/<?= $tie->id ?>" method="post">
                                         <button class="btn btn-outline-danger" type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </div>

@@ -15,7 +15,7 @@
 
 <body>
     <?php require_once __DIR__ . '/../components/navbar.php' ?>
-    <h1 class="text-center mt-5 mb-5">Liste des chaussettes</h1>
+    <h1 class="text-center mt-5 mb-5">Liste des cravattes</h1>
     <div class="container">
         <table class="table text-center">
             <thead>
@@ -23,8 +23,8 @@
 
                     <div class="row">
                         <div class="col-4 text-center">
-                            <a href="socks/create">
-                                <i class="fas fa-plus"></i> Add a new sock
+                            <a href="ties/create">
+                                <i class="fas fa-plus"></i> Add a new Tie
                             </a>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                         <td>
                             <div class="row">
                                 <div class="col-4 text-center">
-                                    <a href="socks/<?= $sock->id ?>">
+                                    <a href="ties/<?= $sock->id ?>">
                                         <i class="fas fa-book-open"></i>
                                     </a>
                                 </div>

@@ -29,7 +29,8 @@ class ormFacade
      */
     public static function getById($table, $id)
     {
-        $sql = DB::prepare('SELECT * FROM ' . $table . ' WHERE id = :id');
+        var_dump($id);
+        $sql = DB::prepare('SELECT * FROM socks WHERE id = 11');
         $sql->execute([':id' => $id]);
 
         return $sql->fetchAll(PDO::FETCH_CLASS, self::class);
