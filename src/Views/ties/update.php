@@ -25,7 +25,7 @@
 <body>
     <?php require_once __DIR__ . '/../components/navbar.php' ?>
     <h1 class="text-center mt-5 mb-5">Update <?php foreach ($tiesView as $tie) : echo $tie->name;
-                                                endforeach; ?> sock :</h1>
+                                                endforeach; ?> tie :</h1>
     <div class="container">
         <table class="table text-center">
             <thead>
