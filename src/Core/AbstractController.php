@@ -20,7 +20,11 @@ abstract class AbstractController {
      * @return mixed
      */
     public function findAll($table) {
-        return Sock::findAll($table);
+        if($table == 'socks'){
+            return Sock::findAll($table);
+        } else {
+            return Ties::findAll($table);
+        }
     }
     /**
      * @param $table
@@ -28,7 +32,11 @@ abstract class AbstractController {
      * @return mixed
      */
     public function find($table,$id) {
-        return Sock::find($table,$id);
+        if($table == 'socks'){
+            return Sock::find($table,$id);
+        } else {
+            return Ties::find($table,$id);
+        }
     }
     /**
      * @return mixed all matching colors
@@ -59,7 +67,12 @@ abstract class AbstractController {
      */
     public function insertController($table,$arrayVal)
     {
-        return Sock::insertDatas($table,$arrayVal);
+        if($table == 'socks'){
+            return Sock::insertDatas($table,$arrayVal);
+        } else {
+            return Ties::insertDatas($table,$arrayVal);
+
+        }
     }
 
     /**
@@ -67,13 +80,22 @@ abstract class AbstractController {
      */
     public function updateController($table,$id, $arrayVal)
     {
-        return Sock::updateDatas($table,$id, $arrayVal);
+        if($table == 'socks'){
+            return Sock::updateDatas($table,$id, $arrayVal);
+        } else {
+            return Ties::updateDatas($table,$id, $arrayVal);
+
+        }
     }
     /**
      * @return mixed
      */
     public function deleteController($table,$id)
     {
-        return Sock::deleteDatas($table,$id);
+        if($table == 'socks'){
+            return Sock::deleteDatas($table,$id);
+        } else {
+            return Ties::deleteDatas($table,$id);
+        }
     }
 }
