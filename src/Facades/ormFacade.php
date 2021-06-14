@@ -40,7 +40,13 @@ class ormFacade
      */
     public static function getSocksByColorSocks()
     {
-        $sql = DB::prepare('SELECT * FROM socks INNER JOIN ties ON socks.color = ties.color');
+        $sql = DB::prepare('SELECT socks.name,socks.type,socks.color FROM socks INNER JOIN ties ON socks.color = ties.color');
+        $sql->execute();
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+    }
+    public static function getTiesByColorSocks()
+    {
+        $sql = DB::prepare('SELECT ties.name,ties.type,ties.color FROM ties INNER JOIN socks ON socks.color = ties.color');
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -54,6 +60,13 @@ class ormFacade
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_ASSOC);
     }
+    public static function getTiesNameByColorSocks()
+    {
+        $sql = DB::prepare('SELECT ties.name FROM ties INNER JOIN socks ON socks.color = ties.color');
+        $sql->execute();
+        return $sql->fetchAll(PDO::FETCH_ASSOC);
+    }
+
 
     /**
      * @param $table

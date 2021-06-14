@@ -61,4 +61,11 @@ final class TiesController extends AbstractController
         $this->deleteController('ties', $id);
         header('Location: /ties');
     }
+    public function joinController(){
+        $url = $this->url;
+        $title = $this->title;
+        $joinSocks = self::ColorsSocksController();
+        $joinTies = self::getByColorsTiesController();
+        new View('ties/join',compact("joinSocks","joinTies","url","title"));
+    }
 }

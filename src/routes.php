@@ -20,6 +20,7 @@ Route::post('/tiesCreateInsert', [TiesController::class, 'persistInsert']);
 Route::get('/tiesUpdate/{id}', [TiesController::class, 'update']);
 Route::post('/tiesUpdateInsert/{id}', [TiesController::class, 'persistUpdate']);
 Route::post('/tiesDelete/{id}', [TiesController::class, 'delete']);
+Route::get('/tiesSocks', [TiesController::class, 'joinController']);
 
 //Route::get('/user/ties', [TiesController::class, 'index']);
 //Route::get('/user/ties/{id}', [TiesController::class, 'show']);

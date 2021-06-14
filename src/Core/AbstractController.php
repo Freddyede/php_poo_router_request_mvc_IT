@@ -3,13 +3,14 @@
 
 namespace Core;
 use Models\Sock;
+use Models\Ties;
 
 
 abstract class AbstractController {
     /**
      * @var array|string[][] $url
      */
-    protected array $url = [['url'=>'/socks','name'=>'Socks'],['url'=>'/ties','name'=>'Ties']];
+    protected array $url = [['url'=>'/socks','name'=>'Socks'],['url'=>'/ties','name'=>'Ties'],['url'=>'/tiesSocks','name'=>'Join Socks Ties']];
     /**
      * @var array|string[][] $title
      */
@@ -32,7 +33,7 @@ abstract class AbstractController {
     /**
      * @return mixed all matching colors
      */
-    public function getByColorsSocksController() {
+    public function ColorsSocksController() {
         return Sock::getByColorsSocks();
     }
     /**
@@ -41,6 +42,16 @@ abstract class AbstractController {
     public function getByNameSocksController()
     {
         return Sock::getSocksNameByColorSocks();
+    }
+    public function getByColorsTiesController() {
+        return Ties::getByColorsTies();
+    }
+    /**
+     * @return mixed
+     */
+    public function getByNameTiesController()
+    {
+        return Ties::getByNameTies();
     }
 
     /**
@@ -58,7 +69,6 @@ abstract class AbstractController {
     {
         return Sock::updateDatas($table,$id, $arrayVal);
     }
-
     /**
      * @return mixed
      */
