@@ -24,29 +24,29 @@
 
 <body>
     <?php require_once __DIR__ . '/../components/navbar.php' ?>
-    <h1 class="text-center mt-5 mb-5">Update <?php foreach ($socksView as $sock) : echo $sock->name;
+    <h1 class="text-center mt-5 mb-5">Update <?php foreach ($tiesView as $tie) : echo $tie->name;
                                                 endforeach; ?> sock :</h1>
     <div class="container">
         <table class="table text-center">
             <thead>
-            <?php foreach ($socksView as $sock) : ?>
+                <?php foreach ($tiesView as $tie) : ?>
 
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Type</th>
-                <th scope="col">Color</th>
-                <th scope="col">Action</th>
-            </tr>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Color</th>
+                        <th scope="col">Action</th>
+                    </tr>
             </thead>
             <tbody>
-            <form action="/ties/update/<?= $sock->id?>" method="POST">
-                <tr>
-                    <td><input type="text" value="<?= $sock->name?>" name="name" /></td>
-                    <td><input type="text" value="<?= $sock->type?>" name="type" /></td>
-                    <td><input type="text" value="<?= $sock->color?>" name="color" /></td>
-                    <td><input class="btn btn-primary" type="submit" value="Enregistrer"></td>
-                </tr>
-            </form>
+                <form action="../tiesUpdateInsert/<?= $tie->id?>" method="POST">
+                    <tr>
+                        <td><input type="text" value="<?= $tie->name?>" name="name" /></td>
+                        <td><input type="text" value="<?= $tie->type?>" name="type" /></td>
+                        <td><input type="text" value="<?= $tie->color?>" name="color" /></td>
+                        <td><input class="btn btn-primary" type="submit" value="Enregistrer"></td>
+                    </tr>
+                </form>
             <?php endforeach; ?>
             </tbody>
         </table>

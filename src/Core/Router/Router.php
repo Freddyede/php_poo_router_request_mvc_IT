@@ -53,11 +53,10 @@ class Router
     public function handleRoute($routes)
     {
         foreach ($routes as $route) {
-            $regex = '#^' . preg_replace('#/{([^/]*)}#', '/(.?)', $route['uri']) . '$#';
+            $regex = '#^' . preg_replace('#/{([^/]*)}#', '/(.+)', $route['uri']) . '$#';
             $matches = [];
             if (preg_match_all($regex, $this->request->getUri(), $matches, PREG_SET_ORDER)) {
                 // Route declarée, correspond à l'uri actuelle de l'utilisateur
-
                 /**
                  * $matches = [
                  *     [

@@ -36,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="/socks/create" method="post">
+                <form action="/socksCreateInsert" method="post">
                     <tr>
                         <td><input class="input" type="text" name="name" /></td>
                         <td><input type="text" name="type" /></td>

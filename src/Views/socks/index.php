@@ -23,7 +23,7 @@
 
                     <div class="row">
                         <div class="col-4 text-center">
-                            <a href="socks/create">
+                            <a href="socksCreate">
                                 <i class="fas fa-plus"></i> Add a new sock
                             </a>
                         </div>

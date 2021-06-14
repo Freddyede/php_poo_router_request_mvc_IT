@@ -27,9 +27,8 @@ final class TiesController extends AbstractController
     {
         $url = $this->url;
         $title = $this->title;
-        $socksView = null;
-
-        new View('ties/create', compact("socksView", "url", "title"));
+        $ties = null;
+        new View('ties/create', compact( "ties","url", "title"));
     }
 
     public function persistInsert()
@@ -45,8 +44,8 @@ final class TiesController extends AbstractController
 
         $url = $this->url;
         $title = $this->title;
-        $socksView = $this->find(self::TABLE, $id);
-        new View('socks/update', compact("socksView", "url", "title"));
+        $tiesView = $this->find(self::TABLE, $id);
+        new View('ties/update', compact("tiesView", "url", "title"));
     }
 
     public function persistUpdate($request, $id)
@@ -54,7 +53,7 @@ final class TiesController extends AbstractController
         if (isset($_POST)) {
             self::updateController(self::TABLE,$id,$request->getBody());
         }
-        header('Location: /socks');
+        header('Location: /ties');
     }
 
     public function delete($request, $id)

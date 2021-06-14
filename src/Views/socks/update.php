@@ -39,7 +39,7 @@
                     </tr>
             </thead>
             <tbody>
-                <form action="/socks/update/<?= $sock->id?>" method="POST">
+                <form action="../socksUpdateInsert/<?= $sock->id?>" method="POST">
                     <tr>
                         <td><input type="text" value="<?= $sock->name?>" name="name" /></td>
                         <td><input type="text" value="<?= $sock->type?>" name="type" /></td>

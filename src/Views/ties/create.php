@@ -24,7 +24,7 @@
 
 <body>
     <?php require_once __DIR__ . '/../components/navbar.php' ?>
-    <h1 class="text-center mt-5 mb-5"> Add a new sock :</h1>
+    <h1 class="text-center mt-5 mb-5"> Add a new tie :</h1>
     <div class="container">
         <table class="table text-center">
             <thead>
@@ -36,7 +36,7 @@
                 </tr>
             </thead>
             <tbody>
-                <form action="create" method="post">
+                <form action="/tiesCreateInsert" method="post">
                     <tr>
                         <td><input class="input" type="text" name="name" /></td>
                         <td><input type="text" name="type" /></td>

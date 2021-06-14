@@ -45,12 +45,12 @@
                         <td>
                             <div class="row">
                                 <div class="col-6 text-center">
-                                    <a class="btn btn-outline-primary" href="update/<?= $sock->id ?>">
+                                    <a class="btn btn-outline-primary" href="../socksUpdate/<?= $sock->id ?>">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </div>
                                 <div class="col-6 text-center">
-                                    <form action="delete/<?= $sock->id ?>" method="post">
+                                    <form action="../socksDelete/<?= $sock->id ?>" method="post">
                                         <button class="btn btn-outline-danger" type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </div>

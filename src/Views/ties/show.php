@@ -23,8 +23,8 @@
 </head>
 
 <body>
-    <?php require_once __DIR__ . '/../components/navbar.php'?>
-    <h1 class="text-center mt-5 mb-5"><?php foreach ($ties as $sock) : echo $sock->name;
+    <?php require_once __DIR__ . '/../components/navbar.php' ?>
+    <h1 class="text-center mt-5 mb-5"><?php foreach ($ties as $tie) : echo $tie->name;
                                         endforeach; ?> :</h1>
     <div class="container">
         <table class="table text-center">
@@ -45,12 +45,12 @@
                         <td>
                             <div class="row">
                                 <div class="col-6 text-center">
-                                    <a class="btn btn-outline-primary" href="update/<?= $tie->id ?>">
+                                    <a class="btn btn-outline-primary" href="../tiesUpdate/<?= $tie->id ?>">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                 </div>
                                 <div class="col-6 text-center">
-                                    <form action="delete/<?= $tie->id ?>" method="post">
+                                    <form action="../tiesDelete/<?= $tie->id ?>" method="post">
                                         <button class="btn btn-outline-danger" type="submit"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </div>

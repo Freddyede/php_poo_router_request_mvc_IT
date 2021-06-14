@@ -46,7 +46,6 @@ final class SocksController extends AbstractController
 
     public function update($request,  $id)
     {
-
         $url = $this->url;
         $title = $this->title;
         $socksView = $this->find(self::TABLE, $id);
