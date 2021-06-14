@@ -20,7 +20,6 @@ final class SocksController extends AbstractController
         $url = $this->url;
         $title = $this->title;
         $socksView = self::find(self::TABLE, $id);
-        var_dump($socksView);
         try {
             new View('socks/show', compact("socksView", "url", "title"));
         }catch (\Exception $e){
@@ -58,7 +57,6 @@ final class SocksController extends AbstractController
     {
         $datas = $request->getBody();
         if (isset($datas)) {
-            var_dump($request);
             self::updateController(self::TABLE,$id,$request->getBody());
         }
         header('Location: /socks');
@@ -66,9 +64,6 @@ final class SocksController extends AbstractController
 
     public function delete($request, $id)
     {
-        var_dump($id);
-        // var_dump($_REQUEST);
-        // die;
         $this->deleteController('socks', $id);
         header('Location: /socks');
     }

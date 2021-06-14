@@ -59,9 +59,6 @@ final class TiesController extends AbstractController
 
     public function delete($request, $id)
     {
-        var_dump($id);
-        // var_dump($_REQUEST);
-        // die;
         $this->deleteController('ties', $id);
         header('Location: /ties');
     }
